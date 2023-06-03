@@ -1,0 +1,5 @@
+.messageContent {
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 75%;
+}
