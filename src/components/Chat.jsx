@@ -26,35 +26,68 @@ class Chat extends Component {
     });
   }
 
-  render() {
+  render() {    
     const { data } = this.context;
-    // const hasProfilePic = !!data.user?.photoURL;
 
-    return (
-      <div className="chat">
-        <div className="chatInfo">
-          <div className="infor">
-          <img className='IMGUSER'
-            src={data.user?.photoURL} />
-          <span className="dispname">{data.user?.displayName}</span>
-          </div>
-          <div className="chatIcons">
-            <span className="logo">
-              <h2 className="time">
-                {this.state.time.toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                  second: "2-digit",
-                })}
-              </h2>
-            </span>
-          </div>
+    if ( data.user?.displayName == null) {
+      return <div className="chat">
+      <div className="chatInfo">
+        <div className="infor">
+        <img className='IMGUSER'
+          src={data.user?.photoURL} />
+        <span className="dispname">{data.user?.displayName}</span>
         </div>
-        <Messages />
-        <Input />
+        <div className="chatIcons">
+          <span className="logo">
+            <h2 className="time">
+              {this.state.time.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+                second: "2-digit",
+              })}
+            </h2>
+          </span>
+        </div>
       </div>
-    );
+      <div className="messages">
+           <div className="dont">
+            Do'stingizni tanlang!
+           </div>
+    </div>
+    <div className="input">
+              
+    </div>
+      </div>
+    } else {
+      return (
+        <div className="chat">
+          <div className="chatInfo">
+            <div className="infor">
+            <img className='IMGUSER'
+              src={data.user?.photoURL} />
+            <span className="dispname">{data.user?.displayName}</span>
+            </div>
+            <div className="chatIcons">
+              <span className="logo">
+                <h2 className="time">
+                  {this.state.time.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false,
+                    second: "2-digit",
+                  })}
+                </h2>
+              </span>
+            </div>
+          </div>
+          <Messages />
+          <Input />
+        </div>
+      );
+    }
+
+
   }
 }
 

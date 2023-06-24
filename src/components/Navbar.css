@@ -1,0 +1,81 @@
+/* navbar.css */
+
+body {
+    background-color: #212121;
+}
+
+.user {
+    position: relative;
+    display: inline-block;
+}
+
+.user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.user img:hover {
+    transform: scale(1.2);
+}
+
+.dropdown {
+    margin-top: 30px;
+    position: absolute;
+    top: 100%;
+    margin: 3px;
+    margin-top: 4px;
+    margin-right: 80px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+    display: none;
+    min-width: 200px;
+    border-radius: 0px 15px 15px 15px;
+}
+
+.user:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    margin-left: 100px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown li {
+    margin-bottom: 10px;
+}
+
+.dropdown li:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+}
+
+.dropdown a:hover {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
+
+.user .dispalyName {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #edecec;
+}

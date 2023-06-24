@@ -87,8 +87,8 @@ const ProfileUpdate = () => {
               <input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
               <label>New Password</label>
             </div>
-            <div className="inputbox">
-              <input type="file" accept="image/*" onChange={handleFileChange} />
+            <div className="inputbox" >
+              <input type="file" accept="image/*" onChange={handleFileChange} style={{marginTop:"13px"}}/>
               <label>Profile Picture</label>
             </div>
             <button className="button" disabled={loading}>
