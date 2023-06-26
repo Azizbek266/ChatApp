@@ -48,6 +48,7 @@
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 .IMGUSER:hover {
