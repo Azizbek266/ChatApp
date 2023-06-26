@@ -17,7 +17,7 @@ const Emoji = ({ handleEmojiClick }) => {
           <span key={index} onClick={() => handleEmojiClick(emoji)} style={{margin:"10px"}}>
             {emoji}
           </span>
-        ))}
+        ))} 
       </div>
     </div>
   );

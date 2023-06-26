@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
-import "./style.css";
+import "./styles/style.css";
 
 const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
@@ -32,7 +32,7 @@ const Message = ({ message }) => {
               : data.user.photoURL
           }
           alt=""
-        />
+        /> 
         <span id="time">{formattedTime}</span>
       </div>
       <div className="messageContent">

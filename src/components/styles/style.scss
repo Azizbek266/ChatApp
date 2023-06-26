@@ -581,6 +581,36 @@ input:valid~label {
     top: 20px;
 }
 
+.inputbox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #ddd;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #ccc;
+}
+
+.file-label-text {
+    font-size: 16px;
+}
+
+
+/* Hide the default file input */
+
+.file-label input[type="file"] {
+    display: none;
+}
+
 .forget {
     margin: -15px 0 15px;
     font-size: .9em;

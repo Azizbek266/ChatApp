@@ -3,7 +3,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./styles/Navbar.css";
 
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     signOut(auth);
-  };
+  }; 
 
   return (
     <div className="navbar">

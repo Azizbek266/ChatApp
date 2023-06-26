@@ -1,7 +1,7 @@
 @font-face {
     font-family: "alarm clock";
-    src: url("./fonts/alarmclock.eot");
-    src: url("./fonts/alarmclock.eot?#iefix") format("embedded-opentype"), url("./fonts/alarmclock.woff") format("woff"), url("./fonts/alarmclock.ttf") format("truetype");
+    src: url("../fonts/alarmclock.eot");
+    src: url("../fonts/alarmclock.eot?#iefix") format("embedded-opentype"), url("../fonts/alarmclock.woff") format("woff"), url("../fonts/alarmclock.ttf") format("truetype");
     font-weight: 900;
     font-style: normal;
     font-display: swap;

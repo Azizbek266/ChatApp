@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Img from "../img/img.png";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
-import './style.css'
+import './styles/style.css'
 import {
   arrayUnion,
   doc,
@@ -13,7 +13,6 @@ import {
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { v4 as uuid } from "uuid";
-import Sand from "../img/send.png";
 
 const Input = () => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -99,7 +98,7 @@ const Input = () => {
       )}
       <button id="icons" onClick={() => setShowEmojiPicker(!showEmojiPicker)}>😀</button>
       <input
-        type="text"
+        type="text" 
         placeholder="Xabar yozing..."
         onChange={(e) => setText(e.target.value)}
         value={text}

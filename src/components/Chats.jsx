@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 import { db } from "../firebase";
-import './Chats.css'
+import './styles/Chats.css'
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
@@ -33,7 +33,7 @@ const Chats = () => {
     <div className="chats">
       {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => (
         <div
-          className="userChat"
+          className="userChat"  
           key={chat[0]}
           onClick={() => handleSelect(chat[1].userInfo)}
         >

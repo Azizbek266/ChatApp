@@ -3,7 +3,7 @@ import { updateProfile, reauthenticateWithCredential, EmailAuthProvider, updateP
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProfileUpdate = () => {
   const [err, setErr] = useState(false);
@@ -89,7 +89,7 @@ const ProfileUpdate = () => {
             </div>
             <div className="inputbox" >
               <input type="file" accept="image/*" onChange={handleFileChange} style={{marginTop:"13px"}}/>
-              <label>Profile Picture</label>
+              <label>Profile Picture</label>  
             </div>
             <button className="button" disabled={loading}>
               {loading ? "Updating..." : "Update Profile"}

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-import logo from "../img/favicon.png";
+
 
 const Login = () => {
   const [err, setErr] = useState(false);
@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
-    const password = e.target[1].value;
+    const password = e.target[1].value;  
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -46,32 +46,13 @@ const Login = () => {
                         <p>Sizda akkaunt yo'qmi? <a href="./register">Ro'yxatdan o'tish</a></p>
                     </div>
                     <div class="register">
-                        <p><a onClick={handleForgotPassword}>Parolni tiklash!</a></p>
+                        <p><a href="#" onClick={handleForgotPassword}>Parolni tiklash!</a></p>
                     </div>  
                 </form>
                 {err && <span>Noto'g'ri to'ldirildi!</span>}
             </div>
         </div>
     </section>
-    // {/* <div className="formContainer">
-    //   <div className="formWrapper">
-    //     <div className="logo">
-    //       <img src={logo} alt="Logo" /> <h3>strum</h3>
-    //     </div>
-    //     <span className="title">Kirish</span>
-    //     <form >
-    //       <input type="email" placeholder="Elektron Pochtangiz" />
-    //       <input type="password" placeholder="Parolingiz" />
-    //       <button>Kirish</button>
-         
-    //     </form>
-    //     <p>
-    //       Siz ro'yxatdan o'tmaganmisiz?{" "}
-    //       <Link to="/register">Ro'yxatdan o'tish</Link>
-    //     </p>
-    //     <button onClick={handleForgotPassword}>Parolingizni unutdingizmi?</button>
-    //   </div>
-    // </div> */}
   );
 };
 

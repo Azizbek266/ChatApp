@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Messages from "./Messages";
 import Input from "./Input";
 import { ChatContext } from "../context/ChatContext";
-import "./style.css";
+import "./styles/style.css";
 
 class Chat extends Component {
   static contextType = ChatContext;
@@ -23,7 +23,7 @@ class Chat extends Component {
   tick() {
     this.setState({
       time: new Date(),
-    });
+    }); 
   }
 
   render() {    
@@ -33,7 +33,7 @@ class Chat extends Component {
       return <div className="chat">
       <div className="chatInfo">
         <div className="infor">
-        <img className='IMGUSER'
+        <img className='IMGUSER' alt=""
           src={data.user?.photoURL} />
         <span className="dispname">{data.user?.displayName}</span>
         </div>
@@ -64,7 +64,7 @@ class Chat extends Component {
         <div className="chat">
           <div className="chatInfo">
             <div className="infor">
-            <img className='IMGUSER'
+            <img className='IMGUSER'alt=""
               src={data.user?.photoURL} />
             <span className="dispname">{data.user?.displayName}</span>
             </div>

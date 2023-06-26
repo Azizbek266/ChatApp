@@ -21,7 +21,7 @@ const Messages = () => {
   console.log(messages)
 
   
-  return (
+  return ( 
     
     <div className="messages">
       {messages.map((m) => (

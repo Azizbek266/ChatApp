@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import Add from "../img/addAvatar.png";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../img/favicon.png";
 
 const Register = () => {
   const [err, setErr] = useState(false);
@@ -31,7 +29,7 @@ const Register = () => {
       if (file) {
         photoURL = await uploadAndGetDownloadURL(storageRef, file);
       }
-
+ 
       await updateProfile(res.user, {
         displayName,
         photoURL,

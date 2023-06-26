@@ -8,21 +8,18 @@ const Search = () => {
   const [username, setUsername] = useState("");
   const [users, setUsers] = useState([]);
   const [err, setErr] = useState(false);
-  const [user, setUser] = useState(null);
-  const [inputLength, setInputLength] = useState(0);
   const [showResults, setShowResults] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
 
   const handleSearch = async () => {
     if (username.length >= 1) {
-      // Perform the search
       const q = query(
         collection(db, "users"),
         where("displayName", ">=", username.toLowerCase()),
         where("displayName", "<=", username.toLowerCase() + "\uf8ff"),
         orderBy("displayName")
-      );
+      ); 
   
       try {
         const querySnapshot = await getDocs(q);
@@ -32,21 +29,21 @@ const Search = () => {
             foundUsers.push(doc.data());
           });
           setUsers(foundUsers);
-          setErr(false); // Clear the error state if user found
-          setShowResults(true); // Show the search results
+          setErr(false); 
+          setShowResults(true); 
         } else {
           setUsers([]);
-          setErr(true); // Set the error state if user not found
-          setShowResults(true); // Show the search results
+          setErr(true); 
+          setShowResults(true); 
         }
       } catch (err) {
         setErr(true);
-        setShowResults(true); // Show the search results
+        setShowResults(true); 
       }
     } else {
       setUsers([]);
       setErr(false);
-      setShowResults(false); // Hide the search results
+      setShowResults(false); 
     }
   };
   
@@ -120,7 +117,7 @@ const Search = () => {
                   <span>{user.displayName}</span>
                 </div>
               </div>
-            ))}
+            ))} 
           </div>
         )}
     </div>
